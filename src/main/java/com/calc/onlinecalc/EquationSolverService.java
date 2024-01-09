@@ -62,6 +62,7 @@ public class EquationSolverService {
                     number.append(equation.charAt(i));
                     i++;
                 }
+                i--;
                 rpn.add(number.toString());
                 number.setLength(0);
             } else if ('(' == token) {
