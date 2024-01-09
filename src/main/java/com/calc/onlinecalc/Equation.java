@@ -40,6 +40,14 @@ public class Equation {
         this.result = result;
     }
 
+    public String getResolvedString() {
+        if(result % 1 == 0) {
+            return String.format("%s = %d", equation, (int)result);
+        } else {
+            return String.format("%s = %f", equation, result);
+        }
+    }
+
     @Override
     public String toString() {
         return String.format("Equation[id=%d, equation=%s, result=%f]", id, equation, result);
