@@ -56,6 +56,8 @@ public class MainView extends VerticalLayout {
                 double result = equationSolverService.solveEquation(equationString);
                 String text = (result % 1) == 0 ? String.valueOf((int)result) : String.valueOf(result);
                 output.setText(text);
+                equationRepository.save(new Equation(equationString, result));
+                grid.setItems(equationRepository.findAll());
             } catch (ArithmeticException ex) {
                 notification.open();
             }
