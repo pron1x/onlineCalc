@@ -23,13 +23,13 @@ public class EquationSolverService {
                 if(stack.size() < 2) {
                     throw new ArithmeticException("Not enough numbers to apply operator to");
                 }
-                long right = Long.parseLong(stack.pop());
-                long left = Long.parseLong(stack.pop());
+                double right = Double.parseDouble(stack.pop());
+                double left = Double.parseDouble(stack.pop());
                 double r = switch (token) {
                     case "+" -> left + right;
                     case "-" -> left - right;
                     case "*" -> left * right;
-                    case "/" -> (double) left / right;
+                    case "/" -> left / right;
                     case "^" -> Math.pow(left, right);
                     default -> throw new ArithmeticException("Illegal Operand in equation");
                 };
