@@ -79,6 +79,7 @@ public class MainView extends VerticalLayout {
                 equationRepository.save(new Equation(equationString, result));
                 equationList.setItems(equationRepository.findAll());
             } catch (ArithmeticException ex) {
+                output.setText("");
                 notification.open();
             }
         });
